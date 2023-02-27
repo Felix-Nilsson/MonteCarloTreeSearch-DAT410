@@ -24,9 +24,10 @@ class ConnectState:
         #return [col for col in range(GameMeta.COLS) if self.board[0][col] == 0]
         moves = []
         for col in range(GameMeta.COLS):
-            for row in (GameMeta.ROWS):
+            for row in range(GameMeta.ROWS):
                 if self.board[row][col] == 0:
                     moves.append((row,col))
+        return moves
 
     def check_win(self):
         if len(self.last_played) > 0 and self.check_win_from(self.last_played[0], self.last_played[1]):
